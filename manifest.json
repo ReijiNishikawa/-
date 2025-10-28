@@ -1,0 +1,28 @@
+{
+  "name": "割り勘アシスタント",
+  "short_name": "割り勘",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#234d3c",
+  "theme_color": "#234d3c",
+  "description": "人数と金額を入力するだけで、一人あたりの支払額を自動計算するシンプルな割り勘サポートアプリ。",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

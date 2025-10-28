@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>割り勘アシスタント</title>
+  <meta name="description" content="人数と金額を入力すると一人あたりの支払い額を10円単位で切り上げて計算する、オフライン対応の割り勘サポートアプリ。">
+  <meta name="theme-color" content="#234d3c">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>割り勘アシスタント</h1>
+    <p>金額と人数を入れるだけで一人あたりの支払い目安を計算します。</p>
+  </header>
+  <main>
+    <section class="inputs">
+      <div class="field-group">
+        <label for="totalAmount">合計金額（円）</label>
+        <input id="totalAmount" type="number" min="0" inputmode="numeric" placeholder="例：12000">
+      </div>
+      <div class="field-group">
+        <label for="peopleCount">人数</label>
+        <input id="peopleCount" type="number" min="1" inputmode="numeric" placeholder="例：4">
+      </div>
+      <div class="result-card" aria-live="polite">
+        <span class="result-label">一人あたり（10円単位で切り上げ）</span>
+        <span id="perPersonAmount" class="result-value">---</span>
+      </div>
+    </section>
+
+    <section class="participants">
+      <div class="participants-header">
+        <h2>参加者リスト</h2>
+        <p class="hint">人数を変更すると自動で行が増減します。入力内容は端末に保存されます。</p>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">名前</th>
+              <th scope="col">支払済</th>
+              <th scope="col">支払い方法</th>
+              <th scope="col">備考</th>
+            </tr>
+          </thead>
+          <tbody id="participantsBody">
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>入力内容はブラウザ内に保存され、オフラインでも利用できます。</p>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
